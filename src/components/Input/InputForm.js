@@ -25,13 +25,13 @@ const useStyles = makeStyles({
 const initialState = {
 	amount: '',
 	category: '',
-	type: 'Income',
+	type: '',
 	date: new Date(),
 };
 
 const InputForm = () => {
-	const [formData, setFormData] = useState();
-
+	const [formData, setFormData] = useState(initialState);
+	console.log(formData);
 	const classes = useStyles();
 
 	return (
@@ -69,10 +69,22 @@ const InputForm = () => {
 				</FormControl>
 			</Grid>
 			<Grid item xs={6}>
-				<TextField type='number' label='Amount' fullWidth />
+				<TextField
+					type='number'
+					label='Amount'
+					fullWidth
+					value={formData.amount}
+					onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+				/>
 			</Grid>
 			<Grid item xs={6}>
-				<TextField type='date' label='Date' fullWidth />
+				<TextField
+					type='date'
+					label='Date'
+					fullWidth
+					value={formData.date}
+					onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+				/>
 			</Grid>
 			<Button
 				className={classes.button}
