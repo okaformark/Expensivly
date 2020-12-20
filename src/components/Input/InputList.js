@@ -62,7 +62,7 @@ const InputList = () => {
 	];
 
 	return (
-		<List dense='false' className={classes.list}>
+		<List dense={false} className={classes.list}>
 			{transactions.map((transaction) => (
 				<Slide
 					direction='down'
@@ -84,7 +84,7 @@ const InputList = () => {
 							</Avatar>
 						</ListItemAvatar>
 						<ListItemText
-							primary={transaction.catergory}
+							primary={transaction.category}
 							secondary={`$${transaction.amount} - ${transaction.date}`}
 						/>
 						<ListItemSecondaryAction>

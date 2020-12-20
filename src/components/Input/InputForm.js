@@ -46,7 +46,8 @@ const InputForm = () => {
 					<InputLabel>Category</InputLabel>
 					<Select>
 						<MenuItem value='Business'>Business</MenuItem>
-						<MenuItem value='Business'>Business</MenuItem>
+						<MenuItem value='Food'>Food</MenuItem>
+						<MenuItem value='Salary'>Salry</MenuItem>
 					</Select>
 				</FormControl>
 			</Grid>

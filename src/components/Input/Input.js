@@ -6,7 +6,6 @@ import {
 	Typography,
 	Grid,
 	Divider,
-	List,
 	makeStyles,
 } from '@material-ui/core';
 import InputForm from './InputForm';
