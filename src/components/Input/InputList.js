@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
 const InputList = () => {
 	const classes = useStyles();
 
-	const gls = useContext(ExpenseTrackerContext);
-	console.log(gls);
+	const { deleteAction, addAction } = useContext(ExpenseTrackerContext);
+
 	const transactions = [
 		{
 			id: 1,
