@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { ExpenseTrackerContext } from '../../context/context';
 import {
 	TextField,
 	Typography,
@@ -10,6 +11,7 @@ import {
 	MenuItem,
 	makeStyles,
 } from '@material-ui/core';
+import { v4 as uuidv4 } from 'uuid';
 
 const useStyles = makeStyles({
 	radioGroup: {
@@ -31,7 +33,19 @@ const initialState = {
 
 const InputForm = () => {
 	const [formData, setFormData] = useState(initialState);
-	console.log(formData);
+
+	const { addAction } = useContext(ExpenseTrackerContext);
+
+	const addTransactionHandler = () => {
+		const transaction = {
+			...formData,
+			amount: Number(formData.amount),
+			id: uuidv4(),
+		};
+		addAction(transaction);
+		setFormData(initialState);
+	};
+
 	const classes = useStyles();
 
 	return (
@@ -91,6 +105,7 @@ const InputForm = () => {
 				variant='outlined'
 				color='primary'
 				fullWidth
+				onClick={addTransactionHandler}
 			>
 				Add
 			</Button>
