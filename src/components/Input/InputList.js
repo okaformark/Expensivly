@@ -41,14 +41,14 @@ const InputList = () => {
 		{
 			id: 2,
 			type: 'Expense',
-			category: 'Business',
+			category: 'Food',
 			amount: 60,
 			date: new Date(),
 		},
 		{
 			id: 3,
 			type: 'Income',
-			category: 'Business',
+			category: 'Salary',
 			amount: 540,
 			date: new Date(),
 		},
