@@ -32,38 +32,9 @@ const useStyles = makeStyles((theme) => ({
 const InputList = () => {
 	const classes = useStyles();
 
-	const { deleteAction, addAction } = useContext(ExpenseTrackerContext);
-
-	const transactions = [
-		{
-			id: 1,
-			type: 'Expense',
-			category: 'Business',
-			amount: 150,
-			date: new Date(),
-		},
-		{
-			id: 2,
-			type: 'Expense',
-			category: 'Food',
-			amount: 60,
-			date: new Date(),
-		},
-		{
-			id: 3,
-			type: 'Income',
-			category: 'Salary',
-			amount: 540,
-			date: new Date(),
-		},
-		{
-			id: 4,
-			type: 'Income',
-			category: 'Business',
-			amount: 550,
-			date: new Date(),
-		},
-	];
+	const { deleteAction, addAction, transactions } = useContext(
+		ExpenseTrackerContext
+	);
 
 	return (
 		<List dense={false} className={classes.list}>
@@ -92,7 +63,11 @@ const InputList = () => {
 							secondary={`$${transaction.amount} - ${transaction.date}`}
 						/>
 						<ListItemSecondaryAction>
-							<IconButton edge='end' aria-label='delete' onClick=''>
+							<IconButton
+								edge='end'
+								aria-label='delete'
+								onClick={() => deleteAction(transaction.id)}
+							>
 								<Delete />
 							</IconButton>
 						</ListItemSecondaryAction>
