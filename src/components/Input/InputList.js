@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ExpenseTrackerContext } from '../../context/context';
 import {
 	makeStyles,
 	List,
@@ -30,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
 
 const InputList = () => {
 	const classes = useStyles();
+
+	const gls = useContext(ExpenseTrackerContext);
+	console.log(gls);
 	const transactions = [
 		{
 			id: 1,
