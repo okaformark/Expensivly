@@ -1,6 +1,6 @@
 import { DELETE_TRANSACTION, ADD_TRANSACTION } from './constants';
 
-const contextReducer = (state, action) => {
+const reducer = (state, action) => {
 	let transaction;
 	switch (action.type) {
 		case DELETE_TRANSACTION:
@@ -16,4 +16,4 @@ const contextReducer = (state, action) => {
 	}
 };
 
-export default contextReducer;
+export default reducer;
