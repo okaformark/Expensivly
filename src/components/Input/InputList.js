@@ -32,9 +32,7 @@ const useStyles = makeStyles((theme) => ({
 const InputList = () => {
 	const classes = useStyles();
 
-	const { deleteAction, addAction, transactions } = useContext(
-		ExpenseTrackerContext
-	);
+	const { deleteAction, transactions } = useContext(ExpenseTrackerContext);
 
 	return (
 		<List dense={false} className={classes.list}>
